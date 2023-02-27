@@ -9,7 +9,7 @@ public interface EstadoService {
 
     public Estado getEstado(Estado estado);
 
-    public void save(Estado estado); //Para insertar o modificar(Si tiene el idEstadoo no)
+    public void save(Estado estado); //Para insertar o modificar(Si tiene el idEstado no)
 
     public void delete(Estado estado);
 }
