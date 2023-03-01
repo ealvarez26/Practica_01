@@ -4,23 +4,25 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link th:href="@{/estilos/estilo1.css}" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <header/>
+       <header th:replace="layout/plantilla_1 :: header"/>
         <h2>Lista de Estados</h2>
         <a th:href="@{/nuevoEstado}">Nuevo estado</a>
         <br />
         <br />
         <div th:if="${estados != null and !estados.empty}">
-            <table border="1">
-                <thead>
+            <table border="1"/>
+                <thead th:replace="layout/plantilla_1 :: thead"/>
                 <th>Nombre Estado</th>
                 <th>Capital</th>
                 <th>Poblacion</th>
                 <th>Costas</th>
                 <th colspan="2">Acciones</th>
                 </thead>
-                <tbody><tr th:each="item : ${estados}">
+                <tbody th:replace="layout/plantilla_1 :: tbody"/>
+                    <tr th:each="item : ${estados}">
                         <td th:text="${item.nombreEstado}">
 
                         </td><td th:text="${item.capital}">
@@ -37,6 +39,6 @@
         <div th:if="${estados == null or estados.empty}">
                         La lista esta vacia
         </div>
-       
+               <footer th:replace="layout/plantilla_1 :: footer"/>
     </body>
 </html>
